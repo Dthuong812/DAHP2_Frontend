@@ -1,0 +1,28 @@
+.logoImg{
+    width: 90px;
+    height: 30px;
+}
+.logo_img {
+    height: 64px; 
+    margin: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease; 
+  }
+  
+  .logo_img.collapsed {
+    margin: 8px; 
+    font-size: 0;
+  }
+  
+  .logo_img img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+  
+  .logo_img.collapsed img {
+    width: 62px; 
+    height: 28px;
+  }
+  
