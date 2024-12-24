@@ -191,25 +191,25 @@ const DatawareHouse = (props) => {
             key: "status",
             filters: [
                 {
-                    text: "Đang xử lý",
-                    value: "Đang xử lý"
+                    text: "Còn hàng",
+                    value: "Còn hàng"
                 }, {
-                    text: "Đã hoàn thành",
-                    value: "Đã hoàn thành"
+                    text: "Còn ít",
+                    value: "Còn ít"
                 }, {
-                    text: "Đã hủy",
-                    value: "Đã hủy"
+                    text: "Hết hàng",
+                    value: "Hết hàng"
                 },
             ],
             onFilter: (value, record) => record.status === value,
             render: (status) => {
                 let color = "green";
-                if (status === "Đã hủy") 
+                if (status === "Hết hàng") 
                     color = "red";
                 
 
 
-                if (status === "Đang xử lý") 
+                if (status === "Còn ít") 
                     color = "orange";
                 
 
