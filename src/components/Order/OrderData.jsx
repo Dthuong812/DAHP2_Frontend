@@ -135,6 +135,7 @@ const OrderData = (props) => {
             dataIndex: "key",
             key: "key",
             sorter: (a, b) => a.key.localeCompare(b.key),
+            defaultSortOrder: "descend"
         },
         {
             title: "Khách hàng",

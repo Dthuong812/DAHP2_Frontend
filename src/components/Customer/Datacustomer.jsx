@@ -89,7 +89,8 @@ const Datacustomer = (props) => {
             title: "Mã khách hàng",
             dataIndex: "key",
             key: "key",
-            sorter: (a, b) => a.key.localeCompare(b.key)
+            sorter: (a, b) => a.key.localeCompare(b.key),
+            defaultSortOrder: "descend"
         },
         {
             title: "Tên khách hàng",

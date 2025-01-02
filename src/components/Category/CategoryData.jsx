@@ -91,7 +91,8 @@ const CategoryData = (props) => {
             title: "Mã danh mục",
             dataIndex: "key",
             key: "key",
-            sorter: (a, b) => a.key.localeCompare(b.key)
+            sorter: (a, b) => a.key.localeCompare(b.key),
+            defaultSortOrder: "descend"
         },
         {
             title: "Tên danh mục",

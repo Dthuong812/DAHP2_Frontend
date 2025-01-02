@@ -128,7 +128,8 @@ const DatawareHouse = (props) => {
             title: "Mã sản phẩm",
             dataIndex: "key",
             key: "key",
-            sorter: (a, b) => a.key.localeCompare(b.key)
+            sorter: (a, b) => a.key.localeCompare(b.key),
+            defaultSortOrder: "descend"
         },
         {
             title: 'Hình ảnh',

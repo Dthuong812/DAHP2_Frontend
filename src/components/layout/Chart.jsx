@@ -19,8 +19,8 @@ const Chart = () => {
                 return;
             }
 
-            const orderDate = new Date(order.createdAt).toLocaleDateString(); 
-            const orderSales = order.total_amount || 0; 
+            const orderDate = new Date(order.createdAt).toLocaleDateString();
+            const orderSales = order.total_amount || 0;
 
             if (!groupedData[orderDate]) {
                 groupedData[orderDate] = orderSales;
@@ -28,14 +28,20 @@ const Chart = () => {
                 groupedData[orderDate] += orderSales;
             }
         });
-        const processed = Object.entries(groupedData)
-            .map(([date, totalSales]) => ({
-                createAt: date,
-                total_amount: totalSales,
-            }))
-            .sort((a, b) => new Date(a.createAt) - new Date(b.createAt));
 
-        return processed.slice(-days);
+        const today = new Date();
+        const daysArray = Array.from({ length: days }, (_, i) => {
+            const date = new Date(today);
+            date.setDate(today.getDate() - (days - 1 - i));
+            return date.toLocaleDateString();
+        });
+
+        const processed = daysArray.map((date) => ({
+            createAt: date,
+            total_amount: groupedData[date] || 0,
+        }));
+
+        return processed;
     };
 
     useEffect(() => {
@@ -67,7 +73,7 @@ const Chart = () => {
         color: "#5570f1",
         xAxis: {
             label: {
-                autoRotate: false, 
+                autoRotate: false,
             },
         },
         meta: {
